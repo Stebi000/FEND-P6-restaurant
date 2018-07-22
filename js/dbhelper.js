@@ -10,7 +10,7 @@ class DBHelper {
     return `http://localhost:${port}/data/restaurants.json`;
   }
 
-  /* Fetch all restaurants*/	
+  /* Fetch all restaurants*/
   static fetchRestaurants(callback) {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', DBHelper.DATABASE_URL);
@@ -134,12 +134,14 @@ class DBHelper {
   }
 
   /* Map marker for a restaurant    */
-   static mapMarkerForRestaurant(restaurant, map) {
-    const marker = new L.marker([restaurant.latlng.lat, restaurant.latlng.lng],
-      {title: restaurant.name,
-      alt: restaurant.name,
-      url: DBHelper.urlForRestaurant(restaurant)
-      })
-      marker.addTo(newMap);
-    return marker;
-  }  
+  static mapMarkerForRestaurant(restaurant, map) {
+   // https://leafletjs.com/reference-1.3.0.html#marker
+   const marker = new L.marker([restaurant.latlng.lat, restaurant.latlng.lng],
+     {title: restaurant.name,
+     alt: restaurant.name,
+     url: DBHelper.urlForRestaurant(restaurant)
+     })
+     marker.addTo(newMap);
+   return marker;
+ }
+}
