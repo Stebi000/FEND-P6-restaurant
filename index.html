@@ -17,17 +17,17 @@
             </nav>
         </header>
 
-        <main id="maincontent">
-            <section id="map-container" aria-label="Map of restaurants">
-                <div id="map" role="application"></div>
+        <main id="maincontent" role="main">
+            <section id="map-container" aria-label="Map of restaurants" role="application">
+                <div id="map"></div>
             </section>
             <section aria-label="Filter results">
-                <div class="filter-options">
+                <div class="filter-options" role="form" aria-label="Restaurant filter">
                     <h2>Filter Results</h2>
-                    <select aria-label="Select a Neighborhood" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+                    <select aria-label="Select a Neighborhood" role="listbox" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
                         <option value="all">All Neighborhoods</option>
                     </select>
-                    <select aria-label="Select a Cuisine" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+                    <select aria-label="Select a Cuisine" id="cuisines-select" name="cuisines" role="listbox" onchange="updateRestaurants()">
                         <option value="all">All Cuisines</option>
                     </select>
                 </div>
